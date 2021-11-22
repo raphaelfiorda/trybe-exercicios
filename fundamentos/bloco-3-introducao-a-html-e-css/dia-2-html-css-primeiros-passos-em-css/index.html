@@ -5,21 +5,32 @@
     <title>HTML</title>
     <style>
         h1 {
-            font-size: 65px;
-            color: orange;
+          font-family: 'Lucida Console';
+          font-size: 50px;
+          color: rgba(136, 114, 72, 0.801);
         }
-        .colors-bg {
-            background-color: rgb(204, 163, 163);
+        .paragraphs_and_lists {
+          font-weight: 510;
         } 
+        #yellow_item {background-color: yellow}
+        #red_item {background-color: red}
+        #brown_item {background-color: rgb(116, 95, 81)}
+        
+        body {
+          font-size: 16px;
+          text-transform: uppercase;
+          background-color: rgb(183, 202, 214);
+        }
     </style>
   </head>
   <body>
     <h1>Exercícios 3.2</h1>
-    <p class="colors-bg">Qual é a sua cor favorita?</p>
-    <ul class="colors-bg">
-      <li>Amarelo</li>
-      <li>Vermelho</li>
-      <li>Marrom</li>
+    <hr>
+    <p class="paragraphs_and_lists">Qual é a sua cor favorita?</p>
+    <ul class="paragraphs_and_lists">
+      <li id="yellow_item">Amarelo</li>
+      <li id="red_item">Vermelho</li>
+      <li id="brown_item">Marrom</li>
     </ul>
   </body>
 </html>
