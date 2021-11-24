@@ -1,0 +1,51 @@
+h1, h2, h3,
+h4, h5, h6 {
+    color: red;
+}
+h1 em, h2 em, h3 em
+h4 em, h5 em, h6 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
+ol {
+    background-color: yellow;
+}
+ol li em.par {
+    color: green;
+}
+ol li em.impar {
+    text-transform: uppercase;
+}
+li {
+    font-size: 20px;
+}
+li em {
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+}
+.bluefont {
+    color: blue;
+}
+.javabg {
+    background-color: pink;
+}
+.dev_allies:hover {
+    font-weight: 700;
+}
+.stack:hover {
+    color: orange;
+}
+.w3s:hover {
+    color: green;
+}
+.mdn:hover {
+    color: black;
+}
+.devdocs:hover {
+    color: rgb(212, 212, 25);
+}
+.trybe:hover {
+    color: seagreen;
+}
