@@ -1,27 +1,44 @@
+
 h1 {
     text-align: center;
-  }
-
-  .first {
+}
+.podium {
+  text-align: center;
+}
+.podium li, .podium ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+.inline-block {
+  display: inline-block;
+}
+.first {
     background-color: rgb(235, 200, 84);
     font-size: 20px;
     height: 50px;
     text-align: center;
-    width: 200px;
+    width: 300px;
+    margin: 0 auto 0 auto;
   }
-
-  .second {
+.second {
     background-color: rgb(219, 219, 219);
     font-size: 20px;
     height: 50px;
     text-align: center;
     width: 300px;
   }
-
-  .third {
+.third {
     background-color: rgb(170, 142, 106);
     font-size: 20px;
     height: 50px;
     text-align: center;
     width: 300px;
-  }
+  }.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 0;
+}
+.container li {
+  display: inline-block;
+}
