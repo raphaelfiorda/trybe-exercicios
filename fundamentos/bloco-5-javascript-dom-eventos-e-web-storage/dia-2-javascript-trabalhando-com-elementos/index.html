@@ -58,7 +58,22 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
+      let headingFirst = document.createElement('h1');
+        document.body.appendChild(headingFirst);
+
+      let h1 = document.querySelector('h1');
+          h1.id = 'title';
+          h1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+
+      let main = document.createElement('main');
+        document.body.appendChild(main);
+        document.querySelector('main').id = 'main-content';
+     
       
+
+      console.log(document.body)
+        
+
     </script>
   </body>
 </html>
