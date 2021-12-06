@@ -67,7 +67,47 @@
 
       let main = document.createElement('main');
         document.body.appendChild(main);
-        document.querySelector('main').id = 'main-content';
+        document.querySelector('main').id = 'main_content';
+
+      for (let i = 1; i <= 3; i += 1) {
+        main_content.appendChild(document.createElement('section'));
+      }
+          main_content.children[0].className = 'left-content';
+          main_content.children[1].className = 'center-content';
+          main_content.children[2].className = 'right-content';
+      
+      let leftContent = document.querySelector('.left-content');
+          leftContent.appendChild(document.createElement('img'));
+          leftContent.firstChild.setAttribute('src', 'https://picsum.photos/200');
+          leftContent.firstChild.className = 'small-image';
+      
+      let centerContent = document.querySelector('.center-content');
+          centerContent.appendChild(document.createElement('p'));
+          centerContent.firstChild.innerText = 'Texto exemplo do center-content';
+      
+      let rightContent = document.querySelector('.right-content');
+          rightContent.appendChild(document.createElement('ul'));
+          let rightContentList = document.querySelector('.right-content ul');
+            let listaNumeros = ['um', 'dois', 'três', 'quatro', 'cinco',
+                           'seis', 'sete', 'oito', 'nove', 'dez']
+            
+            for (let i = 0; i < listaNumeros.length; i += 1) {
+              let numero = listaNumeros[i];
+
+              let numero_li = document.createElement('li');
+              numero_li.innerText = numero;
+
+              rightContentList.appendChild(numero_li);
+            }
+      for (let j = 0; j < 3; j += 1) {
+          main_content.appendChild(document.createElement('h3'))
+      }
+      
+            
+
+
+
+      
      
       
 
