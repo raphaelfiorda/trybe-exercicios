@@ -99,21 +99,20 @@
 
               rightContentList.appendChild(numero_li);
             }
+
       for (let j = 0; j < 3; j += 1) {
           main_content.appendChild(document.createElement('h3'))
       }
+        let h3 = main_content.querySelectorAll('h3');
+            for (let j = 0; j < 3; j += 1) {
+              h3[j].className = 'description';
+          }
+         
       
-            
 
-
-
-      
-     
       
 
       console.log(document.body)
-        
-
     </script>
   </body>
 </html>
