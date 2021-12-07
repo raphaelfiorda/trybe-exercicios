@@ -65,16 +65,16 @@
           h1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
           h1.className = 'title';
 
-      let main = document.createElement('main');
-        document.body.appendChild(main);
-        document.querySelector('main').id = 'main_content';
+      document.body.appendChild(document.createElement('main'));
+      let main = document.querySelector('main');
+          main.className = 'main-content';
 
       for (let i = 1; i <= 3; i += 1) {
-        main_content.appendChild(document.createElement('section'));
+        main.appendChild(document.createElement('section'));
       }
-          main_content.children[0].className = 'left-content';
-          main_content.children[1].className = 'center-content';
-          main_content.children[2].className = 'right-content';
+          main.children[0].className = 'left-content';
+          main.children[1].className = 'center-content';
+          main.children[2].className = 'right-content';
       
       let leftContent = document.querySelector('.left-content');
           leftContent.appendChild(document.createElement('img'));
@@ -101,14 +101,14 @@
             }
 
       for (let j = 0; j < 3; j += 1) {
-          main_content.appendChild(document.createElement('h3'))
+          main.appendChild(document.createElement('h3'))
       }
-        let h3 = main_content.querySelectorAll('h3');
+        let h3 = main.querySelectorAll('h3');
             for (let j = 0; j < 3; j += 1) {
               h3[j].className = 'description';
           }
          
-      
+      main.removeChild(leftContent);
 
       
 
