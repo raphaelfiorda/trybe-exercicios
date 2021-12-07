@@ -21,6 +21,8 @@ const myWebpage = document.getElementById('my-spotrybefy');
             this.className = 'tech'
         }
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
+        // Adicionei um EventListener em cada <li> para que, ao se clicada,
+        // o item de lista receba a classe .tech
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
