@@ -8,8 +8,18 @@ const myWebpage = document.getElementById('my-spotrybefy');
 // 1. Copie esse arquivo e edite apenas ele;
 // 1.1. Antes de começar os exercícios, use o LiveServer para dar uma olhada em como está a página no navegador.
 // 1.2. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
+        // Isso ocorre, pois foi adicionado ao elemento a classe
+        // .tech com a propriedade transform: translateY(-20px)
+        // que movimenta o elemento no eixo vertical para baixo
+        // (se o valor é positivo) ou para cima (se o valor é negativo)
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
+    firstLi.addEventListener('click', translaterY);
+    secondLi.addEventListener('click', translaterY);
+    thirdLi.addEventListener('click', translaterY);
+        function translaterY() {
+            this.className = 'tech'
+        }
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
