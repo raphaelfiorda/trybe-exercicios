@@ -16,6 +16,8 @@ function createDaysOfTheWeek() {
   // Escreva seu código abaixo.
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   let listaDias = document.getElementById('days');
+  
+  function diasDoCalendário () {
     for (let i = 0; i < dezDaysList.length; i += 1) {
      listaDias.appendChild(document.createElement('li'));
      let dias = listaDias.children[i];
@@ -28,5 +30,8 @@ function createDaysOfTheWeek() {
         if (dias.innerHTML.match(/(^4|11|18|25)/)) {
             dias.className += ' friday';
         }
- }
-  console.log(document.querySelectorAll('#days li'))
+    }
+  } diasDoCalendário()
+  console.log(listaDias.children)
+
+  //console.log(document.querySelectorAll('#days li'))
