@@ -21,5 +21,12 @@ function createDaysOfTheWeek() {
      let dias = listaDias.children[i];
         dias.className = 'day';
         dias.innerHTML = dezDaysList[i];
+
+        if (dias.innerHTML.match(/(24|25|31)/)) {
+            dias.className += ' holiday';
+        }  
+        if (dias.innerHTML.match(/(^4|11|18|25)/)) {
+            dias.className += ' friday';
+        }
  }
-  console.log(listaDias)
+  console.log(document.querySelectorAll('#days li'))
