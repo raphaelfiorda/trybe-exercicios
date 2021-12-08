@@ -18,6 +18,8 @@ function createDaysOfTheWeek() {
   let listaDias = document.getElementById('days');
   let buttonsContainer = document.querySelector('.buttons-container');
 
+  // Exe. 1 - Função que implementa os dias do Calendário
+
   function diasDoCalendário () {
     for (let i = 0; i < dezDaysList.length; i += 1) {
      listaDias.appendChild(document.createElement('li'));
@@ -34,8 +36,8 @@ function createDaysOfTheWeek() {
     }
   } 
   diasDoCalendário()
-  
- // console.log(listaDias.children)
+
+ // Exe. 2 - Função que cria o botão Feriados
 
   function feriados (string) {
         string = 'Feriados';
@@ -46,4 +48,6 @@ function createDaysOfTheWeek() {
   }
   feriados()
 
-  //console.log(document.querySelectorAll('#days li'))
+// Exe. 3 - Função que adiciona ao botão Feriados o evento 'click'
+
+  console.log(buttonsContainer.firstElementChild)
