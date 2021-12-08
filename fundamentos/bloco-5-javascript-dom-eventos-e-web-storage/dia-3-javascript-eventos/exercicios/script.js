@@ -50,4 +50,12 @@ function createDaysOfTheWeek() {
 
 // Exe. 3 - Função que adiciona ao botão Feriados o evento 'click'
 
+  function clickEvent (button) {
+        let event = button;
+            event.addEventListener('click', function(){
+                this.style = 
+            })
+  }
+  clickEvent(buttonsContainer.firstElementChild)
+
   console.log(buttonsContainer.firstElementChild)
