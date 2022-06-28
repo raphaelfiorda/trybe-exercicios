@@ -14,9 +14,11 @@ app.get('/user', async (_req, res) => {
   res.status(200).json(users);
 });
 
-// app.get('/user/:id', async () => {
+app.get('/user/:id', async (req, res) => {
+  const { id } = req.params;
 
-// });
+  
+});
 
 app.post('/user', async (req, res) => {
 	const { firstName, lastName, email, password } = req.body;
