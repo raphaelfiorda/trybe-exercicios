@@ -23,6 +23,14 @@ const getUsers = async () => {
   return users;
 };
 
+const getUser = async (id) => {
+  const [[user]] = await connection.execute(
+    'SELECT * FROM users WHERE users.id = ?',
+    [id]
+  )
+  return user;
+}
+
 const create = async (firstName, lastName, email, password) => connection.execute(
   'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
   [firstName, lastName, email, password]
@@ -32,5 +40,6 @@ module.exports = {
   create,
   isInvalid,
   hasMinCharPassword,
+  getUser,
   getUsers
 }
