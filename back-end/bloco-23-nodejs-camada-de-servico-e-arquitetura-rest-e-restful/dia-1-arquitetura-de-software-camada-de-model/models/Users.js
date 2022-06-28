@@ -10,6 +10,16 @@ const isInvalid = (firstName, lastName, email, password) => {
   return false;
 }
 
+const serialize = (user) => {
+  const serialized = {
+    firstName: user.first_name,
+    lastName: user.last_name,
+    email: user.email,
+    id: user.id
+  }
+  return serialized;
+}
+
 const hasMinCharPassword = (password) => {
   if (password.length < 6) return false;
   return true;
@@ -66,7 +76,7 @@ const getUsers = async () => {
     'SELECT * FROM users'
   )
 
-  return users;
+  return users.map(serialize);
 };
 
 const getUser = async (id) => {
@@ -74,13 +84,19 @@ const getUser = async (id) => {
     'SELECT * FROM users WHERE users.id = ?',
     [id]
   )
+  if (!!user) return serialize(user);
+
   return user;
 }
 
-const create = async (firstName, lastName, email, password) => connection.execute(
-  'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
-  [firstName, lastName, email, password]
-)
+const create = async (firstName, lastName, email, password) => {
+  const [{ insertId }] = await connection.execute(
+    'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
+    [firstName, lastName, email, password]
+  );
+  return insertId;
+}
+
 
 module.exports = {
   create,

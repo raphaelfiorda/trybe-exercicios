@@ -54,9 +54,11 @@ app.post('/user', async (req, res) => {
   if (!User.hasMinCharPassword(password))
     return res.status(400).json({ error: true, message: "O campo 'password' deve ter pelo menos 6 caracteres" })
 
-	const [user] = await User.create(firstName, lastName, email, password);
+	const insertedId = await User.create(firstName, lastName, email, password);
 
-	res.status(201).json({ id: user.id, firstName, lastName, email });
+  const createdUser = await User.getUser(insertedId);
+
+	res.status(201).json(createdUser);
 });
 
 app.listen(PORT, () => {
