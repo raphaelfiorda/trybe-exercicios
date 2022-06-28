@@ -1,5 +1,6 @@
 const connection = require('./connection');
 
+// Refatorar: usar switch(true)
 const isInvalid = (firstName, lastName, email, password) => {
   if (!firstName || typeof firstName !== 'string') return { error: true, field: 'firstname'};
   if (!lastName || typeof lastName !== 'string') return { error: true, field: 'lastName'};
@@ -14,13 +15,22 @@ const hasMinCharPassword = (password) => {
   return true;
 }
 
+const getUsers = async () => {
+  const [users] = await connection.execute(
+    'SELECT * FROM users'
+  )
+
+  return users;
+};
+
 const create = async (firstName, lastName, email, password) => connection.execute(
-  'INSERT INTO user (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
+  'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
   [firstName, lastName, email, password]
 )
 
 module.exports = {
   create,
   isInvalid,
-  hasMinCharPassword
+  hasMinCharPassword,
+  getUsers
 }

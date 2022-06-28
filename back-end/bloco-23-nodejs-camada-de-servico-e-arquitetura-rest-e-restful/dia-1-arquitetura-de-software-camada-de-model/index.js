@@ -8,6 +8,16 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.get('/user', async (_req, res) => {
+  const users = await User.getUsers();
+
+  res.status(200).json(users);
+});
+
+// app.get('/user/:id', async () => {
+
+// });
+
 app.post('/user', async (req, res) => {
 	const { firstName, lastName, email, password } = req.body;
   
