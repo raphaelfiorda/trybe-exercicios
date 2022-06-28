@@ -24,6 +24,25 @@ app.get('/user/:id', async (req, res) => {
   res.status(200).json(user);
 });
 
+app.put('/user/:id', async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+  const { id } = req.params;
+
+  const exists = await User.userExists(id);
+
+  if (!exists) return res.status(404).json({ message: 'User not found' });
+
+  const { message } = User.validateUserUpdate(firstName, lastName, email, password);
+
+  if (message) return res.status(400).json({ message })
+
+  await User.updateUser(firstName, lastName, email, password, id);
+
+  const updatedUser = await User.getUser(id);
+
+  res.status(200).json(updatedUser);
+})
+
 app.post('/user', async (req, res) => {
 	const { firstName, lastName, email, password } = req.body;
   
